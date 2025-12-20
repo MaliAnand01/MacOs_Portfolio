@@ -21,7 +21,7 @@ const renderText = (text, className, baseWeight = 400) => {
 };
 
 const setupTextHover = (container, type) => {
-  if (!container) return;
+  if (!container) return () => {};
 
   const letters = container.querySelectorAll("span");
   const { min, max, defaultWeight } = FONT_WEIGHTS[type];
@@ -48,7 +48,7 @@ const setupTextHover = (container, type) => {
   };
 
   const handleMouseLeave = () =>
-    letters.forEach((letter) => animateLetter(letter, defaultWeight ,0.3));
+    letters.forEach((letter) => animateLetter(letter, defaultWeight, 0.3));
 
   container.addEventListener("mousemove", handleMouseMove);
   container.addEventListener("mouseleave", handleMouseLeave);
