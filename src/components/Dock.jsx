@@ -21,7 +21,7 @@ const Dock = () => {
       icons.forEach((icon) => {
         const { left: iconLeft, width } = icon.getBoundingClientRect();
         const center = iconLeft - left + width / 2;
-        const distance = Math.abs(mouseX - center);
+        const distance =  Math.abs(mouseX - center);
 
         const intensity = Math.exp(-(distance ** 2.5) / 2000);
 
